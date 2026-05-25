@@ -55,7 +55,6 @@ Static Assets
 | **CloudWatch** | Automatic Lambda execution logs + retention policy | 5GB logs free |
 | **S3** | Static asset storage | 5GB free |
 | **Secrets Manager** | Secure storage for any API keys or secrets | 30-day trial |
-| **API Gateway** | CORS configuration, route management | Included above |
 | **GitHub Actions** | CI/CD — auto-deploys Lambdas on every push | Free for public repos |
 
 > **Total monthly cost: $0** — all services operate within AWS Free Tier limits for this project's scale.
@@ -91,7 +90,7 @@ aws-cloud-portfolio/
 
 ### Step 1 — Clone and install
 ```bash
-git clone https://github.com/YOUR-USERNAME/aws-cloud-portfolio.git
+git clone https://github.com/arch-i-tect-ux/aws-cloud-portfolio.git
 cd aws-cloud-portfolio
 pip install boto3
 ```
@@ -123,13 +122,13 @@ Now every push to `main` auto-deploys both Lambda functions.
 
 ### Step 5 — Test the API
 ```bash
-# Replace YOUR-API-URL with the URL printed by setup_infrastructure.py
-curl -X POST https://YOUR-API-URL/contact \
+# Submit a contact form
+curl -X POST https://l6nc8u8lxh.execute-api.us-east-1.amazonaws.com/contact \
   -H "Content-Type: application/json" \
   -d '{"name":"Test User","email":"your@email.com","message":"Hello from the CLI!"}'
 
 # Read all submissions
-curl https://YOUR-API-URL/submissions
+curl https://l6nc8u8lxh.execute-api.us-east-1.amazonaws.com/submissions
 ```
 
 ---
@@ -164,7 +163,7 @@ This project was built as a practical demonstration of skills developed across:
 
 ## Author
 
-Built by a cloud practitioner from South Africa with a background spanning UI/UX design, web development, and multi-cloud engineering.
+[arch-i-tect-ux](https://github.com/arch-i-tect-ux) — Cloud practitioner from South Africa with a background spanning UI/UX design, web development, and multi-cloud engineering.
 
 📄 [Download Full Case Study PDF](docs/case-study.pdf)
 
